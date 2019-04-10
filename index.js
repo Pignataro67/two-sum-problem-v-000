@@ -20,8 +20,8 @@ function binarySearchTwoSum(array, sum){
 
 
 
-function binaryMatch(arr, missing){
-  if(binarySearchTwoSum(arr, missing)){
+function binaryMatch(array, missing){
+  if(binarySearchTwoSum(array, missing)){
     return true
   }
 }
