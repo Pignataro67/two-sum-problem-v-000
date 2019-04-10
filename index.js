@@ -24,16 +24,6 @@ function binaryMatch(arr, missing){
   if(binarySearchTwoSum(arr, missing)){
     return true
   }
-  
-  // if(arr.length === 0) return false
-  // const splitIndex = Math.floor(arr.length / 2)
-  // if (arr[splitIndex] < num){
-  //   return binaryMatch(arr.slice(splitIndex + 1), num)
-  // } else if(arr[splitIndex] > num){
-  //   return binaryMatch(arr.slice(0, splitIndex), num)
-  // } else {
-  //   return true
-  // }
 }
 
 function hashTwoSum(arr, sum){
