@@ -18,6 +18,21 @@ function bruteForceTwoSum(array, sum) {
 //   return sumPairs
 // }
 
+function binarySearchTwoSum(arr, sum) {
+  const sorted = mergeSort(arr);
+  let sliced = sorted;
+  let pairs = []
+
+  sorted.forEach(n => {
+    let complement = sum - n;
+    sliced = sliced.slice(1, sliced.length);
+
+    if (binarySearch(sliced, complement)) { pairs.push([n, complement]) };
+  });
+
+  return pairs;
+}
+
 function binaryMatch(arr, sum){
   if(arr.length === 0) return false
   const splitIndex = Math.floor(arr.length / 2)
