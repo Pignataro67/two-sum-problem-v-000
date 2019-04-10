@@ -8,15 +8,15 @@ function bruteForceTwoSum(array, sum) {
   return sumPairs
 }
 
-function binarySearchTwoSum(array, sum){
-  const sortedArr = array.sort();
-  const sumPairs = [];
-  for (let [i,e] of sortedArr.entries()){
-    const searchNum = sum - el;
-    if (binaryMatch(sortedArr.slice(i + 1), searchNum)) sumPairs.push([el, searchNum])
-  }
-  return sumPairs
-}
+// function binarySearchTwoSum(array, sum){
+//   const sortedArr = array.sort();
+//   const sumPairs = [];
+//   for (let [i,e] of sortedArr.entries()){
+//     const searchNum = sum - el;
+//     if (binaryMatch(sortedArr.slice(i + 1), searchNum)) sumPairs.push([el, searchNum])
+//   }
+//   return sumPairs
+// }
 
 function binaryMatch(arr, sum){
   if(arr.length === 0) return false
