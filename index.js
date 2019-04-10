@@ -8,41 +8,32 @@ function bruteForceTwoSum(array, sum) {
   return sumPairs
 }
 
-// function binarySearchTwoSum(array, sum){
-//   const sortedArr = array.sort();
-//   const sumPairs = [];
-//   for (let [i,e] of sortedArr.entries()){
-//     const searchNum = sum - el;
-//     if (binaryMatch(sortedArr.slice(i + 1), searchNum)) sumPairs.push([el, searchNum])
-//   }
-//   return sumPairs
-// }
-
-function binarySearchTwoSum(arr, sum) {
-  const sorted = mergeSort(arr);
-  let sliced = sorted;
-  let pairs = []
-
-  sorted.forEach(n => {
-    let complement = sum - n;
-    sliced = sliced.slice(1, sliced.length);
-
-    if (binarySearch(sliced, complement)) { pairs.push([n, complement]) };
-  });
-
-  return pairs;
+function binarySearchTwoSum(array, sum){
+  const sortedArr = array.sort();
+  const sumPairs = [];
+  for (let [i,e] of sortedArr.entries()){
+    const searchNum = sum - el;
+    if (binaryMatch(sortedArr.slice(i + 1), searchNum)) sumPairs.push([el, searchNum])
+  }
+  return sumPairs
 }
 
-function binaryMatch(arr, sum){
-  if(arr.length === 0) return false
-  const splitIndex = Math.floor(arr.length / 2)
-  if (arr[splitIndex] < num){
-    return binaryMatch(arr.slice(splitIndex + 1), num)
-  } else if(arr[splitIndex] > num){
-    return binaryMatch(arr.slice(0, splitIndex), num)
-  } else {
+
+
+function binaryMatch(arr, missing){
+  if(binarySearchTwoSum(arr, missing)){
     return true
   }
+  
+  // if(arr.length === 0) return false
+  // const splitIndex = Math.floor(arr.length / 2)
+  // if (arr[splitIndex] < num){
+  //   return binaryMatch(arr.slice(splitIndex + 1), num)
+  // } else if(arr[splitIndex] > num){
+  //   return binaryMatch(arr.slice(0, splitIndex), num)
+  // } else {
+  //   return true
+  // }
 }
 
 function hashTwoSum(arr, sum){
